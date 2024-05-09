@@ -1,0 +1,28 @@
+<svg width="320" height="95" viewBox="0 0 320 95" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_785_409" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="320" height="95">
+<rect width="320" height="95" fill="white"/>
+</mask>
+<g mask="url(#mask0_785_409)">
+<path d="M0 12.4495C34.2442 2.50353 59.6817 5.23204 96 17.5646C152 36.5804 203.299 79.8556 266 13.8596C271.009 8.58738 276.368 3.98093 281.969 0M320 5.3038C289.883 7.13382 269.002 20.4728 266.001 46.5158C262.985 72.6904 276.825 89.8864 300.5 95" stroke="#6DBD44"/>
+<g filter="url(#filter0_d_785_409)">
+<circle cx="64" cy="54" r="33" fill="white"/>
+</g>
+<path d="M47 64.4615L52.6533 58.6933C53.3161 58.017 54.2754 57.7208 55.2041 57.9056L58.8723 58.6356C59.4375 58.7481 60.0125 58.8048 60.5889 58.8048H66.9751C68.3055 58.8048 69.384 59.8832 69.384 61.2136V61.2136C69.384 62.5439 68.3055 63.6224 66.9751 63.6224H60.5482" stroke="#6CBB43" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M50.853 70.5296L52.8645 68.5853C53.4239 68.0446 54.1715 67.7423 54.9495 67.7423H66.1998C66.4283 67.7423 66.6528 67.6819 66.8504 67.5673L80.124 59.8698C81.0816 59.3145 81.4454 58.1123 80.9563 57.1193V57.1193C80.4345 56.0596 79.1429 55.6368 78.0954 56.1828L70.8408 59.964" stroke="#6CBB43" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="65.1648" cy="46.5181" rx="11.5" ry="9.5181" stroke="#6CBB43" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="61.6648" cy="45" r="2.5" stroke="#6CBB43" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="69.6648" cy="52" r="2.5" stroke="#6CBB43" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M69.7154 42.6406L60.7493 54.9968" stroke="#6CBB43" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<filter id="filter0_d_785_409" x="7" y="9" width="114" height="114" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="12"/>
+<feGaussianBlur stdDeviation="12"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.0435697 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_785_409"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_785_409" result="shape"/>
+</filter>
+</defs>
+</svg>

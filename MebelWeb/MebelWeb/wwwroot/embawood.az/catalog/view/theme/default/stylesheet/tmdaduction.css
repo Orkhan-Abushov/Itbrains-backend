@@ -1,0 +1,178 @@
+/* start  product auction modual */
+.auctionpage .pricebox,.auctionpage .col-sm-4 #product,.auctionpage .product-sold-count-text,.auctionpage .options,.auctionpage .cart,.auctionpage .wishlist-compare,.auctionpage .alert-info,.auctionpage .custom-stats,.auctionpage .product-price-group,.auctionpage.site-wrapper .product-options,.auctionpage.site-wrapper .button-group-page,.extended-container .auctionpage .price-old,.extended-container .auctionpage .price-new,.extended-container .auctionpage .list-unstyled.price{
+	display: none !important;
+}
+	#auction-main{margin-bottom:10px; background-color: #eeeeee;
+    }
+    #auction-main .auction-toppart{width:100%;  text-align:center; background-size:cover;}
+	#auction-main .auction-header {
+    width: 100%;
+    text-align: center;
+    padding: 25px;
+    font-size: 25px;
+    color: #fff;
+    font-weight: 600;
+}
+#auction-main .auction-header .fa{font-size: 20px;}
+#auction-main .coundown-main div {
+  display: inline-block;
+  line-height: 1;
+  padding: 20px;
+  font-size: 40px;
+}
+
+#auction-main .coundown-main span {
+  display: block;
+  font-size: 20px;
+  color: #fff;
+
+
+}
+
+#auction-main .coundown-main #days {
+  font-size: 35px;
+  color: #fff;
+  border: 1px solid #fff;
+   font-weight:600;
+}
+#auction-main .coundown-main #hours {
+  font-size: 35px;
+  color: #fff;
+  border: 1px solid #fff;
+   font-weight:600;
+}
+#auction-main .coundown-main #minutes {
+  font-size: 35px;
+  color: #fff;
+  border: 1px solid #fff;
+   font-weight:600;
+}
+#auction-main .coundown-main #seconds {
+  font-size: 35px;
+  color: #fff;
+  border: 1px solid #fff;
+  font-weight:600;
+}
+#auction-main .middle-container{
+	display:block;
+}
+
+#auction-main .details-btn {
+    display: inline;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+#auction-main .auction-details {
+    background: transparent;
+    color: #fff;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    font-size: 20px;
+    padding: 10px;
+}
+
+#auction-main .bid-details{
+    background: #fff;
+    padding: 25px;
+}
+#auction-main .bidding-listmain {
+    background: #fff;
+    padding: 25px;
+}
+
+#auction-main .form-control.bidinput{
+    border: 1px solid #229CCA;
+    border-radius: 24px 0 0 24px;
+    display: inline;
+    height: 45px!important;
+    margin: 0 auto;
+    width: 50%;
+    padding: 0 0 0 38px;
+	font-size: 16px;
+}
+
+
+#auction-main .btn.btn-info.bid-button{
+    background-image: linear-gradient(to bottom, #229CCA, #229CCA);
+    background-color: #229CCA;
+    border-color: #229CCA;
+    border-radius: 0 24px 24px 0;
+    height: 45px;
+    margin: 0;
+    position: relative;
+    right: 10px;
+    width: auto;
+    font-weight: 600;
+    font-size: 16px;
+    min-width: 10%;
+    outline: none;
+}
+.bid-container {
+    margin-top: 30px;
+}
+#auction-main form.form-inline {
+    text-align: center;
+}
+#auction-main .auction-bottom {
+    background: #eee;
+    padding: 20px;
+    border: 1px solid #e7e7e7;
+}
+.auction-category{width:100%; background:#474D57;  position:relative;padding-bottom: 15px;}
+.auction-category .coundown-main {
+    text-align: center;
+}
+.auction-category .clockbtn {
+    text-align: center;
+    padding: 10px;
+	width: 100%;
+}
+.auction-category .clockbtn .fa{font-size:35px; cursor:pointer; color:#EC9C0C;}
+.auction-category .days{
+		font-size: 20px;
+		color: #fff;
+		border: 1px solid #fff;
+		font-weight:600;
+		text-align:center;
+		padding:5px 13px;
+}
+.auction-category .hours{
+  font-size: 20px;
+  color: #fff;
+  border: 1px solid #fff;
+   font-weight:600;
+   text-align:center;
+   padding:5px 13px;
+
+}
+.auction-category .minutes{
+  font-size: 20px;
+  color: #fff;
+  border: 1px solid #fff;
+   font-weight:600;
+   text-align:center;
+   padding:5px 13px;
+}
+.auction-category .seconds{
+  font-size: 20px;
+  color: #fff;
+  border: 1px solid #fff;
+  font-weight:600;
+  text-align:center;
+  padding:5px 13px;
+}
+.auction-category #timer div{
+  display: inline-block;
+  line-height: 1;
+  padding: 5px 15px;
+  font-size: 20px;
+}
+.auction-category span{
+  display: block;
+  font-size: 20px;
+  color: #fff;
+ }
+.details-btn #aution-details{
+    text-shadow: none;
+}
+/* end product auction modual */

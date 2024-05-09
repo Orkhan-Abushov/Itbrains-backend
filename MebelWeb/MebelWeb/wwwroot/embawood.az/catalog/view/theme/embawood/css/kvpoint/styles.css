@@ -1,0 +1,30 @@
+div.noter {
+	display: none;
+	width: 308px;
+	position: absolute;
+	background: #000 url('../../images/kvpoint/overlay.png');
+	padding: 10px;
+	z-index: 2;
+}
+
+div.noter textarea {
+	width: 300px;
+	overflow: auto;
+	margin: 10px 0px;
+	background: #111;
+	border: #444 1px solid;
+	color: #FFF;
+}
+
+div.noter a.close {
+	display: block;
+	background: url('../../images/kvpoint/close.gif') no-repeat top;
+	width: 16px;
+	height: 16px;
+	float: right;
+	cursor: pointer;
+}
+
+div.noter a:hover.close {
+	background: url('../../images/kvpoint/close.gif') no-repeat bottom;
+}

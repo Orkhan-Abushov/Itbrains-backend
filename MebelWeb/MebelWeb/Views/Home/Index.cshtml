@@ -1,0 +1,33 @@
+﻿@model List<Slider>
+
+<div class="homepage">
+    <section>
+        <div class="main-banner-slider-wrapper">
+            <div class="main-banner-slider-container">
+                <div class="swiper main-banner-slider">
+                    <div class="swiper-wrapper">
+                        @foreach(var item in Model)
+                        {
+                            
+                        <div class="swiper-slide">
+                                <a href="blog/ramazan_fursetler%c4%b1.html">
+                                    <img src="~/Images/@item.ImgUrl" />
+                               
+                            </a>
+                        </div>
+                        }
+                     
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+
+
+    
+
+    
+</div>

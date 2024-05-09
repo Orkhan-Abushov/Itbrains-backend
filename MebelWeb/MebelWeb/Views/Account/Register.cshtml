@@ -1,0 +1,97 @@
+﻿@model RegisterVM
+
+
+<section class="section-wrapper pb-5 mb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 mt-3">
+                <h1 class="section-title">YENİ HESAB YARADIN</h1>
+                <div class="form_wrapper">
+                    <div class="login-form">
+                       
+                        <form asp-controller="Account" asp-action="Register" method="post" class="mt-5 mb-5 needs-validation">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="col-lg-4 form-group row align-items-center mb-2">
+                                <div>
+                                    <input asp-for="Name" type="text"   placeholder="Ad" class="form-control ed_name register-input" required />
+                                    <span style="color:red" asp-validation-for="Name"></span>
+
+                                </div>
+                                <div class="col-md-12 text-center">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 form-group row align-items-center mb-2">
+                                <div>
+                                    <input asp-for="Surname" type="text"  value="" placeholder="Soyad" id="input-lastname" class="form-control register-input" required />
+                                    <span style="color:red" asp-validation-for="Surname"></span>
+
+                                </div>
+                                <div class="col-md-12 text-center">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 form-group row align-items-center mb-2">
+                                <div>
+                                    <input asp-for="Email" type="email" placeholder="E-mail"  class="form-control ed_email register-input" required />
+                                    <span style="color:red" asp-validation-for="Email"></span>
+
+                                </div>
+                                <div class="col-md-12 text-center">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 form-group row align-items-center mb-2">
+                                <div class="text-center">
+                                    <input asp-for="PhoneNumber" type="text" class="form-control" placeholder="+(994)-xx-xxx-xx-xx" data-mask="+(994)-00-000-00-00" required>
+                                    <span style="color:red" asp-validation-for="PhoneNumber"></span>
+
+                                </div>
+                                <div class="col-md-12 text-center">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 form-group row align-items-center mb-2">
+                                <div>
+                                    <div class="input-group">
+                                        <input asp-for="Password" type="password"   placeholder="Şifrə"  class="form-control register-input" required />
+                                        <span style="color:red" asp-validation-for="Password"></span>
+
+                                    </div>
+                                    <div class="col-md-12 text-center">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 form-group row align-items-center mb-2">
+                                <div>
+                                    <div class="input-group">
+                                        <input asp-for="ConfirmPassword" type="password"   placeholder="Şifrə (təkrar)" class="form-control register-input" required />
+                                        <span style="color:red" asp-validation-for="ConfirmPassword"></span>
+
+                                    </div>
+                                    <div class="col-md-12 text-center">
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="col-md-3">
+                                <label>
+                                    Yadda saxla
+                                </label>
+                                <input type="checkbox" asp-for="IsRemember" class="form-check" />
+                            </div>
+
+                            <div class="mt-3">
+                                <div class="text-center">
+                                    <button type="submit"  class="btn btn-primary w-100 text-uppercase">Qeydiyyatdan keç</button>
+                                </div>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,68 @@
+﻿@model Slider
+<div class="page-content">
+    <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                    <h4 class="mb-sm-0 font-size-18">Jobs Grid</h4>
+
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Jobs</a></li>
+                            <li class="breadcrumb-item active">Jobs Grid</li>
+                        </ol>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card job-filter">
+                    <div class="card-body p-3">
+                        <form class="row" method="post" enctype="multipart/form-data" asp-area="admin" asp-controller="slider" asp-action="create" >
+                            @Html.AntiForgeryToken()
+                            <div class="col-md-3">
+                                <label>
+                                    SubTitle
+                                </label>
+                                <input asp-for="Subtitle" type="text" class="form-control" />
+                                <span asp-validation-for="Subtitle" class="text-danger"></span>
+
+                            </div>
+                            <div class="col-md-3">
+                                <label>
+                                    Title
+                                </label>
+                                <input asp-for="Title" type="text" class="form-control" />
+                                <span asp-validation-for="Title" class="text-danger"></span>
+
+                            </div>
+                            <div class="col-md-3">
+                                <label>
+                                    Description
+                                </label>
+                                <input asp-for="Description" type="text" class="form-control" />
+                                <span asp-validation-for="Description" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-3">
+                                <label>
+                                    İmage
+                                </label>
+                                <input asp-for="ImgFile" type="file" class="form-control" />
+                            </div>
+                            <div class="col-md-3">
+                                <button type="submit" class="btn btn-danger mt-3 btn-block"> Add database</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- End Page-content -->
