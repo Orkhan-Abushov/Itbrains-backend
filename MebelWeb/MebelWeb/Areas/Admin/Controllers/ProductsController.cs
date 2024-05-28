@@ -1,53 +1,55 @@
-﻿//using DMAWebProject.DAL;
-//using DMAWebProject.Models;
-//using MebelWeb.DAL;
-//using Microsoft.AspNetCore.Mvc;
-//using Microsoft./*EntityFrameworkCore*/;
+﻿using MebelWeb.DAL;
+using MebelWeb.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
-//namespace DMAWebProject.Areas.Admin.Controllers
-//{
-//    [Area("Admin")]
-//    public class ProductsController : Controller
-//    {
-//        private readonly AppDbContext appDbContext;
 
-//        public ProductsController(AppDbContext _appDbContext)
-//        {
-//            appDbContext = _appDbContext;
-//        }
-//        public IActionResult Index()
-//        {
-//            return View(appDbContext.Products.Include(x => x.Category).ToList());
-//        }
+namespace DMAWebProject.Areas.Admin.Controllers
+{
+    [Area("Admin")]
+    public class ProductsController : Controller
+    {
+        private readonly AppDbContext appDbContext;
 
-//        public IActionResult Create()
-//        {
-//            ViewBag.Category = appDbContext.Categories.ToList();
+        public ProductsController(AppDbContext _appDbContext)
+        {
+            appDbContext = _appDbContext;
+        }
+        public IActionResult Index()
 
-//            return View();
-//        }
+        {
+            
+            return View(appDbContext.Products.Include(x => x.Category).ToList());
+        }
 
-//        [HttpPost]
-//        public IActionResult Create(Products model)
-//        {
+        public IActionResult Create()
+        {
+            ViewBag.Category = appDbContext.Categories.ToList();
 
-//            if (!ModelState.IsValid)
-//            {
-//                ViewBag.Category = appDbContext.Categories.ToList();
-//                return View(model);
-//            }
+            return View();
+        }
 
-//            appDbContext.Products.Add(model);
-//            appDbContext.SaveChanges();
-//            return RedirectToAction("Index");
-//        }
+        [HttpPost]
+        public IActionResult Create(Products model)
+        {
 
-//        public IActionResult Edit(int id)
-//        {
-//            ViewBag.Category = appDbContext.Categories.ToList();
-//            var model = appDbContext.Products.FirstOrDefault(x => x.Id == id);
+            if (!ModelState.IsValid)
+            {
+                ViewBag.Category = appDbContext.Categories.ToList();
+                return View(model);
+            }
 
-//            return View(model);
-//        }
-//    }
-//}
+            appDbContext.Products.Add(model);
+            appDbContext.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Edit(int id)
+        {
+            ViewBag.Category = appDbContext.Categories.ToList();
+            var model = appDbContext.Products.FirstOrDefault(x => x.Id == id);
+
+            return View(model);
+        }
+    }
+}

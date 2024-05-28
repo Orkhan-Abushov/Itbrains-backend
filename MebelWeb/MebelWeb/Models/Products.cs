@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace DMAWebProject.Models
+namespace MebelWeb.Models
 {
     public class Products
     {
@@ -13,8 +13,9 @@ namespace DMAWebProject.Models
         public int CategoryId { get; set; }
         [ForeignKey("CategoryId")]
         [ValidateNever]
-        //public Category Category { get; set; }
-        public List<Order> Orders { get; set; }
+        public Category Category { get; set; }
+        public List<Orders>Orders { get; set; }
+       
 
     }
 }

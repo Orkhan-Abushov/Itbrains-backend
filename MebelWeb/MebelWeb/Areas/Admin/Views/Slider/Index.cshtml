@@ -1,5 +1,8 @@
 ﻿@model List<Slider>
+@section Styles {
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.css" rel="stylesheet" />
 
+}
 
 <div class="page-content">
     <div class="container-fluid">
@@ -17,7 +20,7 @@
                                 <tr>
                                     <th scope="col">SubTitle</th>
                                     <th scope="col">Title</th>
-                                    <th scope="col"></th>
+                                    <th scope="col">Description</th>
                                     <th scope="col">Img</th>
                                     <th scope="col">Operation</th>
                                 </tr>
@@ -39,7 +42,7 @@
                                             <img width="200" height="200" src="~/Images/@item.ImgUrl" />
                                         </td>
                                         <td>
-                                            <a class="btn btn-danger" asp-area="Admin" asp-controller="Slider" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                            <a class="deleteBtn btn btn-danger" asp-area="Admin" asp-controller="Slider" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                                             <button data-id="@item.Id" type="button" class="editBtn btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalEdit">
                                                 Edit
                                             </button>
@@ -103,7 +106,7 @@
     </div>
 </div>
 
-@* <div class="modal fade" id="exampleModalEdit" tabindex="-1" aria-labelledby="exampleModalEditLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModalEdit" tabindex="-1" aria-labelledby="exampleModalEditLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -145,85 +148,86 @@
         </div>
     </div>
 </div>
- *@
-@section script {
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.js"></script>
 
-    <script>
+    
 
-        // $(document).ready(function () {
-        //     $(document).on('click', '.deleteBtn', function (e) {
-        //         e.preventDefault();
-        //         let url = $(this).attr("href");
-        //         let element = this.parentElement.parentElement;
+    
+    <script> 
+        $(document).ready(function () {
+            $(document).on('click', '.deleteBtn', function (e) {
+                e.preventDefault();
+                let url = $(this).attr("href");
+                let element = this.parentElement.parentElement;
 
-        //         Swal.fire({
-        //             title: 'Silmək istədiyinizdən əminsinizmi?',
-        //             text: "Sildikdən sonra geri qaytarmaq mümkün olmayacaq!",
-        //             type: 'warning',
-        //             showCancelButton: true,
-        //             confirmButtonColor: '#3085d6',
-        //             cancelButtonColor: '#d33',
-        //             confirmButtonText: 'Sil',
-        //             cancelButtonText: 'Geri'
+                Swal.fire({
+                    title: 'Silmək istədiyinizdən əminsinizmi?',
+                    text: "Sildikdən sonra geri qaytarmaq mümkün olmayacaq!",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Sil',
+                    cancelButtonText: 'Geri'
 
-        //         }).then((result) => {
-        //             if (result.value) {
-        //                 $.ajax({
-        //                     url: url,
-        //                     type: "get",
-        //                     dataType: "json",
-        //                     success: function (response) {
-        //                         console.log(response)
-        //                         if (response.status == 200) {
-        //                             Swal.fire(
-        //                                 'Silindi!',
-        //                                 '',
-        //                                 'success'
-        //                             )
-        //                             element.outerHTML = '';
-        //                         }
-        //                         else if (response.status == 400) {
-        //                             //toastr.error(response.message)
-        //                             Swal.fire({
-        //                                 title: 'Error!',
-        //                                 icon: 'error',
-        //                                 confirmButtonText: 'Cool'
-        //                             })
-        //                         }
-        //                     }
-        //                 });
-        //             }
-        //         })
-        //     });
-        // });
+                }).then((result) => {
+                    if (result.value) {
+                        $.ajax({
+                            url: url,
+                            type: "get",
+                            dataType: "json",
+                            success: function (response) {
+                                console.log(response)
+                                if (response.status == 200) {
+                                    Swal.fire(
+                                        'Silindi!',
+                                        '',
+                                        'success'
+                                    )
+                                    element.outerHTML = '';
+                                }
+                                else if (response.status == 400) {
+                                    //toastr.error(response.message)
+                                    Swal.fire({
+                                        title: 'Error!',
+                                        icon: 'error',
+                                        confirmButtonText: 'Cool'
+                                    })
+                                }
+                            }
+                        });
+                    }
+                })
+            });
+        });
 
-        // $(document).ready(() => {
-        //     //Edit(Get)
-        //     $(document).on('click', '.editBtn', (e) => {
-        //         const id = $(e.currentTarget).data('id');
+        $(document).ready(() => {
+            Edit(Get)
+            $(document).on('click', '.editBtn', (e) => {
+                const id = $(e.currentTarget).data('id');
 
-        //         $.ajax({
-        //             url: `/Admin/Slider/Edit/${id}`,
-        //             type: 'GET',
-        //             success: (response) => {
-        //                 if (response.hasOwnProperty('status') && response.status === 400) {
-        //                     alert('tapilmadi');
-        //                 }
-        //                 else {
-        //                     console.log(response);
-        //                     $('#SliderEditForm input[name="Id"]').val(response.id);
-        //                     $('#SliderEditForm input[name="Subtitle"]').val(response.subtitle);
-        //                     $('#SliderEditForm textarea[name="Description"]').val(response.description);
-        //                     $('#SliderEditForm input[name="Title"]').val(response.title);
+                $.ajax({
+                    url: `/Admin/Slider/Edit/${id}`,
+                    type: 'GET',
+                    success: (response) => {
+                        if (response.hasOwnProperty('status') && response.status === 400) {
+                            alert('tapilmadi');
+                        }
+                        else {
+                            console.log(response);
+                            $('#SliderEditForm input[name="Id"]').val(response.id);
+                            $('#SliderEditForm input[name="Subtitle"]').val(response.subtitle);
+                            $('#SliderEditForm textarea[name="Description"]').val(response.description);
+                            $('#SliderEditForm input[name="Title"]').val(response.title);
 
-        //                 }
-        //             }
-        //         });
-        //     });
+                        }
+                    }
+                });
+            });
 
 
-        // });
-
+        });
 
     </script>
 

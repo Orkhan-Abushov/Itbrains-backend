@@ -48,17 +48,20 @@ namespace MebelWeb.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult Delete(int id)
+        public JsonResult Delete(int id)
         {
             if (id == 0)
             {
-                return NotFound();
+                return Json(new
+                {
+                    status = 400
+                });
             }
 
-            var slider = appDbContext.Sliders.Find(id);
+            var slider = appDbContext.Sliders.Find(id); //axtarib tapiram
             if (slider != null)
             {
-                slider.IsCheck = true;
+                slider.IsCheck = false; ;
                 appDbContext.SaveChanges();
             }
 
@@ -68,6 +71,7 @@ namespace MebelWeb.Areas.Admin.Controllers
             });
 
         }
+
         [HttpGet]
         public JsonResult Edit(int id)
         {

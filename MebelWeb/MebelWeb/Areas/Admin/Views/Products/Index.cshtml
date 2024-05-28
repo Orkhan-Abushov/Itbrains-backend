@@ -1,0 +1,58 @@
+﻿@model List<Products>
+
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <a class="btn btn-success" asp-area="Admin" asp-controller="Products" asp-action="Create">Create new Products</a>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card job-filter">
+                    <div class="card-body p-3">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                   
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Category</th>
+                                    <th scope="col">Operation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @item.Title
+                                        </td>
+                                        <td>
+                                            @item.Description
+                                        </td>
+                                        <td>
+                                            @item.Price
+                                        </td>
+                                        <td>
+                                            @item.Category.Name
+                                        </td>
+                                        <td>
+                                            <a class="deleteBtn btn btn-danger" asp-area="Admin" asp-controller="Slider" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                            <button data-id="@item.Id" type="button" class="editBtn btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalEdit">
+                                                Edit
+                                            </button>
+
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

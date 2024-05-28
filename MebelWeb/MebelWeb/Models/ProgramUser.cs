@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using MebelWeb.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace MebelWeb.Models
 {
@@ -7,5 +8,8 @@ namespace MebelWeb.Models
         public string Name { get; set; }
         public string Surename { get; set; }
         public int Age { get; set; }
+        public List<Orders> Orders { get; set; }
+
+
     }
 }
